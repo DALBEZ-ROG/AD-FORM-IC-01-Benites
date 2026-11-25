@@ -32,7 +32,3 @@ pdflatex main.tex
 ```
 
 La carátula se compila con una sola pasada de `pdflatex caratula.tex` dentro de `caratula`.
-
-## Uso de IA
-
-Usé Claude (Anthropic) para buscar y verificar las fuentes, redactar el borrador del análisis, armar el LaTeX y este README. El detalle está en la declaración de uso de IA al final de `documento/main.pdf`.
