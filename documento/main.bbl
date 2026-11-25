@@ -1,0 +1,227 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{gluck2020}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=6a5f797890d2a1d56fdb4605c57ae850}{%
+           family={Gluck},
+           familyi={G\bibinitperiod},
+           given={Adam},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{6a5f797890d2a1d56fdb4605c57ae850}
+      \strng{fullhash}{6a5f797890d2a1d56fdb4605c57ae850}
+      \strng{fullhashraw}{6a5f797890d2a1d56fdb4605c57ae850}
+      \strng{bibnamehash}{6a5f797890d2a1d56fdb4605c57ae850}
+      \strng{authorbibnamehash}{6a5f797890d2a1d56fdb4605c57ae850}
+      \strng{authornamehash}{6a5f797890d2a1d56fdb4605c57ae850}
+      \strng{authorfullhash}{6a5f797890d2a1d56fdb4605c57ae850}
+      \strng{authorfullhashraw}{6a5f797890d2a1d56fdb4605c57ae850}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{23}
+      \field{howpublished}{Uber Engineering Blog}
+      \field{langid}{american}
+      \field{month}{7}
+      \field{title}{Introducing Domain-Oriented Microservice Architecture}
+      \field{urlday}{25}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.uber.com/blog/microservice-architecture/
+      \endverb
+      \verb{url}
+      \verb https://www.uber.com/blog/microservice-architecture/
+      \endverb
+    \endentry
+    \entry{waseem2021}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=2a2d1aef53f7d50188c55f22ee3d6bd6}{%
+           family={Waseem},
+           familyi={W\bibinitperiod},
+           given={Muhammad},
+           giveni={M\bibinitperiod}}}%
+        {{hash=41658c7f1126a9a84da600b357c5ceb5}{%
+           family={Liang},
+           familyi={L\bibinitperiod},
+           given={Peng},
+           giveni={P\bibinitperiod}}}%
+        {{hash=2463e3ddc010ccd007e782d30714ec00}{%
+           family={Shahin},
+           familyi={S\bibinitperiod},
+           given={Mojtaba},
+           giveni={M\bibinitperiod}}}%
+        {{hash=6c11bbfc745c46ce75cb5a5037e645de}{%
+           family={Di\bibnamedelima Salle},
+           familyi={D\bibinitperiod\bibinitdelim S\bibinitperiod},
+           given={Amleto},
+           giveni={A\bibinitperiod}}}%
+        {{hash=18fcd56f77e4e338b87f152a93cc1a34}{%
+           family={Márquez},
+           familyi={M\bibinitperiod},
+           given={Gastón},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{c43803890b67a924ca6d15b70e630690}
+      \strng{fullhash}{ddaafb8141803fa19bf69ee89f4ace4e}
+      \strng{fullhashraw}{ddaafb8141803fa19bf69ee89f4ace4e}
+      \strng{bibnamehash}{ddaafb8141803fa19bf69ee89f4ace4e}
+      \strng{authorbibnamehash}{ddaafb8141803fa19bf69ee89f4ace4e}
+      \strng{authornamehash}{c43803890b67a924ca6d15b70e630690}
+      \strng{authorfullhash}{ddaafb8141803fa19bf69ee89f4ace4e}
+      \strng{authorfullhashraw}{ddaafb8141803fa19bf69ee89f4ace4e}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Systems and Software}
+      \field{langid}{american}
+      \field{month}{12}
+      \field{title}{Design, monitoring, and testing of microservices systems: The practitioners' perspective}
+      \field{volume}{182}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{pages}{111061}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.jss.2021.111061
+      \endverb
+    \endentry
+    \entry{blinowski2022}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=551994bb3af7cc01cbe7d35bf8a39837}{%
+           family={Blinowski},
+           familyi={B\bibinitperiod},
+           given={Grzegorz},
+           giveni={G\bibinitperiod}}}%
+        {{hash=b52b1becb70383aa456df2261ba629ad}{%
+           family={Ojdowska},
+           familyi={O\bibinitperiod},
+           given={Anna},
+           giveni={A\bibinitperiod}}}%
+        {{hash=5eb6c3eaafc04535852773f48d21253e}{%
+           family={Przybyłek},
+           familyi={P\bibinitperiod},
+           given={Adam},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{680a1966f5d5167605f0ef7852e01e99}
+      \strng{fullhash}{31503060b9f18d0e46979405a7659cbc}
+      \strng{fullhashraw}{31503060b9f18d0e46979405a7659cbc}
+      \strng{bibnamehash}{31503060b9f18d0e46979405a7659cbc}
+      \strng{authorbibnamehash}{31503060b9f18d0e46979405a7659cbc}
+      \strng{authornamehash}{680a1966f5d5167605f0ef7852e01e99}
+      \strng{authorfullhash}{31503060b9f18d0e46979405a7659cbc}
+      \strng{authorfullhashraw}{31503060b9f18d0e46979405a7659cbc}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Access}
+      \field{langid}{american}
+      \field{title}{Monolithic vs. Microservice Architecture: A Performance and Scalability Evaluation}
+      \field{volume}{10}
+      \field{year}{2022}
+      \field{pages}{20357\bibrangedash 20374}
+      \range{pages}{18}
+      \verb{doi}
+      \verb 10.1109/ACCESS.2022.3152803
+      \endverb
+    \endentry
+    \entry{velepucha2023}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=bbd05f3e4985e2264f2274b3740903dd}{%
+           family={Velepucha},
+           familyi={V\bibinitperiod},
+           given={Victor},
+           giveni={V\bibinitperiod}}}%
+        {{hash=c545f8f2056f1b258e0827b31309492d}{%
+           family={Flores},
+           familyi={F\bibinitperiod},
+           given={Pamela},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{ce5655542476720466e4f7f92b03239e}
+      \strng{fullhash}{ce5655542476720466e4f7f92b03239e}
+      \strng{fullhashraw}{ce5655542476720466e4f7f92b03239e}
+      \strng{bibnamehash}{ce5655542476720466e4f7f92b03239e}
+      \strng{authorbibnamehash}{ce5655542476720466e4f7f92b03239e}
+      \strng{authornamehash}{ce5655542476720466e4f7f92b03239e}
+      \strng{authorfullhash}{ce5655542476720466e4f7f92b03239e}
+      \strng{authorfullhashraw}{ce5655542476720466e4f7f92b03239e}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Access}
+      \field{langid}{american}
+      \field{title}{A Survey on Microservices Architecture: Principles, Patterns and Migration Challenges}
+      \field{volume}{11}
+      \field{year}{2023}
+      \field{pages}{88339\bibrangedash 88358}
+      \range{pages}{20}
+      \verb{doi}
+      \verb 10.1109/ACCESS.2023.3305687
+      \endverb
+    \endentry
+    \entry{cloudwego}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=0b89988f44de3cc8aa4907b4aaaa7e84}{%
+           family={{CloudWeGo Authors}},
+           familyi={C\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {ByteDance}%
+      }
+      \strng{namehash}{0b89988f44de3cc8aa4907b4aaaa7e84}
+      \strng{fullhash}{0b89988f44de3cc8aa4907b4aaaa7e84}
+      \strng{fullhashraw}{0b89988f44de3cc8aa4907b4aaaa7e84}
+      \strng{bibnamehash}{0b89988f44de3cc8aa4907b4aaaa7e84}
+      \strng{authorbibnamehash}{0b89988f44de3cc8aa4907b4aaaa7e84}
+      \strng{authornamehash}{0b89988f44de3cc8aa4907b4aaaa7e84}
+      \strng{authorfullhash}{0b89988f44de3cc8aa4907b4aaaa7e84}
+      \strng{authorfullhashraw}{0b89988f44de3cc8aa4907b4aaaa7e84}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{american}
+      \field{title}{{CloudWeGo}: Unlock Enterprise Cloud-Native Architectures}
+      \field{urlday}{25}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.cloudwego.io/
+      \endverb
+      \verb{url}
+      \verb https://www.cloudwego.io/
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

@@ -1,0 +1,107 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[american,spanish,es-tabla]{babel}
+\usepackage[margin=2cm]{geometry}
+\usepackage{lmodern}
+\usepackage{csquotes}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage[font=small]{caption}
+\usepackage[backend=biber,style=ieee,autolang=other]{biblatex}
+\usepackage[hidelinks,hypertexnames=false]{hyperref}
+\usepackage{xurl}
+\addbibresource{referencias.bib}
+\DeclareFieldFormat{sentencecase}{#1}
+\setlength{\parskip}{3pt}
+
+\newcommand{\repourl}{https://github.com/DALBEZ-ROG/AD-FORM-IC-01-Benites}
+\newcommand{\apartado}[1]{\par\vspace{3pt}\noindent\textbf{#1}\quad}
+\newcommand{\captura}[2]{\begin{minipage}[t]{0.48\textwidth}\centering\includegraphics[width=\linewidth]{../capturas/#1.png}\\[-2pt]{\footnotesize #2}\end{minipage}}
+
+\begin{document}
+
+\begin{titlepage}
+\centering
+{\Large\bfseries UNIVERSIDAD TÉCNICA ESTATAL DE QUEVEDO\par}
+\vspace{4pt}
+{\large Facultad de Ciencias de la Computación\par}
+{\large Carrera de Software\par}
+\vspace{2cm}
+{\large\bfseries Aplicaciones Distribuidas (ISR-701)\par}
+\vspace{1cm}
+{\Large\bfseries FORM-IC-01\par}
+\vspace{4pt}
+{\large Investigación individual: arquitecturas distribuidas en la industria\par}
+\vspace{1.2cm}
+{\LARGE\bfseries Microservicios en Uber\par}
+\vspace{4pt}
+{\large De dos monolitos a la arquitectura orientada a dominios (DOMA)\par}
+\vfill
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{>{\bfseries}r l}
+  Estudiante: & Benites Pérez Dariem Alberto \\
+  Docente: & Gleiston Guerrero Ulloa, PhD \\
+  Nivel y paralelo: & Séptimo nivel, paralelo B \\
+  Fecha: & 29 de noviembre de 2026 \\
+\end{tabular}
+\vfill
+{\bfseries Repositorio:}\\[4pt]
+{\small\url{\repourl}}
+\end{titlepage}
+
+\section*{Análisis del caso: microservicios en Uber}
+
+\apartado{Descripción del caso.}
+El caso es la plataforma de Uber, la aplicación de viajes y entregas. Su lado servidor está hecho de unos 2200 microservicios que la empresa califica como críticos \cite{gluck2020}. La rotación también es alta: Uber mide que la mitad de sus microservicios se reemplaza cada 1,5 años. El artículo que tomo como fuente principal es de Adam Gluck, del blog oficial de ingeniería, y cuenta cómo cerca de 60 ingenieros de toda la empresa reordenaron esos servicios en lo que llamaron DOMA (\emph{Domain-Oriented Microservice Architecture}) \cite{gluck2020}.
+
+\apartado{Por qué eligió microservicios y qué tenía antes.}
+Entre 2012 y 2013 Uber funcionaba con dos servicios monolíticos. Con decenas de ingenieros eso alcanzaba, pero al llegar a cientos un solo error en el código podía tumbar todo Uber, y cada despliegue era riesgoso y caro. Pasaron a microservicios para separar responsabilidades y bajar el riesgo de cada despliegue. El problema regresó de otra forma cuando fueron miles de ingenieros: revisar una falla podía obligar a recorrer unos 50 servicios de 12 equipos, y una integración sencilla necesitaba tocar 10 puntos distintos. Gluck lo describe como un \enquote{monolito en red}. DOMA no abandona los microservicios: los agrupa en dominios, ordena los dominios en cinco capas que solo pueden llamar a las de abajo, pone un \emph{gateway} como única entrada a cada dominio y define extensiones para que un equipo agregue lógica sin meterse en el código de otro \cite{gluck2020}.
+
+\apartado{Beneficios obtenidos.}
+Uber clasificó los 2200 servicios en 70 dominios y tenía implementada más o menos la mitad. Los equipos de plataforma redujeron entre 25\,\% y 50\,\% el tiempo de incorporación (\emph{onboarding}) a sus plataformas. Un equipo bajó de tres días a tres horas el tiempo de priorizar e integrar una funcionalidad nueva. Dos de las reescrituras más grandes del año ocurrieron detrás de un \emph{gateway}, sin obligar a migrar a los cientos de servicios que dependían de ellas \cite{gluck2020}. Hay que leer estas cifras con cuidado. Las reporta la propia empresa, no muestran la línea base y son de cuando DOMA era nuevo.
+
+\apartado{Desafíos y cómo los resolvió.}
+El desafío central fue la complejidad que trae tener tantos servicios. Uber respondió con las capas, que fijan quién puede llamar a quién, y con los \emph{gateways}, que esconden los cambios internos de un dominio. Un punto quedó abierto: la empresa no da ninguna regla para el tamaño de un dominio \cite{gluck2020}. Waseem et al. encontraron lo mismo en 106 encuestas a profesionales: la complejidad complica el diseño, el monitoreo y las pruebas, y no existen soluciones dedicadas. En ese estudio la forma más usada de dividir un sistema fue combinar diseño guiado por dominio con capacidades de negocio, que es lo que hizo Uber \cite{waseem2021}.
+
+\apartado{Cómo se aplica al PFC.}
+Del caso tomaría tres ideas. Agrupar los servicios por dominio del negocio y no por capa técnica. Dejar el API Gateway como única puerta de entrada, como pide el diseño del PFC. Aplicar la regla de las capas para que no aparezcan llamadas circulares entre servicios. No tomaría la escala: 70 dominios y extensiones tienen sentido con miles de ingenieros, no en un equipo de cuatro. El mismo Gluck dice que una empresa pequeña puede esperar antes de pasar a microservicios \cite{gluck2020}, y Blinowski et al. midieron que en una sola máquina un monolito rinde mejor que su versión en microservicios \cite{blinowski2022}. Por eso en el PFC haría pocos servicios, cada uno con su propia base de datos, y justificaría cada división con un motivo de cambio distinto. Velepucha y Flores comparan las ventajas y desventajas de los dos estilos y relacionan la división en microservicios con principios de modularidad como el ocultamiento de información de Parnas \cite{velepucha2023}.
+
+\newpage
+\section*{Evidencias de autoría}
+
+\subsection*{Captura de la fuente principal}
+
+Leí el artículo de Gluck \cite{gluck2020} guardado en PDF y subrayé las cifras que uso en el análisis. Las capturas son del 25/11/2026, entre las 15:09 y las 15:13, y se ven completas en la carpeta \texttt{capturas} del repositorio.
+
+\begin{figure}[htbp]
+  \centering
+  \captura{uber-p02-2200-microservicios}{p.~2: unos 2200 microservicios críticos.}\hfill
+  \captura{uber-p03-dos-monolitos}{p.~3: dos servicios monolíticos hacia 2012--2013.}\\[6pt]
+  \captura{uber-p04-50-servicios-12-equipos}{p.~4: 50 servicios de 12 equipos para hallar una falla.}\hfill
+  \captura{uber-p05-monolito-en-red}{p.~5: el \enquote{monolito en red}.}\\[6pt]
+  \captura{uber-p06-10-puntos-de-integracion}{p.~6: 10 puntos para una integración sencilla.}\hfill
+  \captura{uber-p12-beneficios-70-dominios}{p.~12: 25--50\,\% menos de \emph{onboarding} y 70 dominios.}
+  \caption{Fragmentos que subrayé en el artículo de Uber \cite{gluck2020}.}
+\end{figure}
+
+\subsection*{Un sistema que conozco de primera mano: TikTok}
+
+El 24 de noviembre de 2026 abrí TikTok para volver a ver un video que tenía guardado en Favoritos y que necesitaba con urgencia. La sección de Favoritos no cargaba y mostraba \enquote{error de red}. En ese mismo momento el feed \enquote{Para ti} funcionaba normal y podía ver videos sin problema. Si TikTok fuera un solo programa, o si mi internet estuviera caído, habría fallado todo. Que fallara una sola parte y la otra siguiera es lo que pasa cuando cada función la atiende un servicio distinto: el que devuelve mis favoritos estaba caído o lento, y el de recomendaciones no.
+
+No puedo ver los servidores de TikTok, así que esto lo deduzco como usuario. Lo que sí está publicado es que ByteDance, la empresa dueña de TikTok, tenía entre 7000 y 8000 microservicios en 2018 y más de 50\,000 en mayo de 2021, según su propio equipo de frameworks \cite{cloudwego}. Es lo mismo que muestra el caso de Uber: con miles de servicios, la caída de uno se nota en una sola función y no en toda la aplicación.
+
+\section*{Declaración de uso de inteligencia artificial}
+
+\noindent
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}l >{\raggedright\arraybackslash}X@{}}
+  Herramienta: & Claude (Anthropic), modelo Claude Opus 5.5, en la aplicación Claude Code. \\
+  Para qué se usó: & Sugerir casos posibles, de los que elegí Uber. Lei el artículo de Uber, y saco sus cifras. Verificar que las referencias académicas y la fuente de ByteDance sean validas, y me ayudo a comprobar sus datos. Corrigio mi borrador completo del análisis y el párrafo de TikTok. \\[4pt]
+  Cómo se verificó: & Cada DOI se comprobó en Crossref el 25/11/2026 y coincide en autores, año, título, revista, volumen y páginas. Cada cifra del análisis se comparó con el artículo de Uber, que leí y subrayé (figura~1). La experiencia con TikTok es mía.
+\end{tabularx}
+
+\printbibliography[title={Referencias}]
+
+\end{document}
